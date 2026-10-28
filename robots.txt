@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /reclamos/
 
 Sitemap: https://nivo-pe.vercel.app/sitemap.xml

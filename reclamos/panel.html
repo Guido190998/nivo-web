@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Panel · Libro de Reclamaciones</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F2747">
+<link rel="icon" href="/nivo-icono.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/reclamos/reclamos.css">
+</head>
+<body>
+<div id="cargando" class="ingreso"><div class="cargando" role="status"><span class="girando" aria-hidden="true"></span>Abriendo el panel…</div></div>
+
+<div id="ingreso" class="ingreso" hidden>
+  <form class="tarjeta" id="f-ingreso" novalidate>
+    <div>
+      <p class="rotulo">Libro de Reclamaciones</p>
+      <h1>Ingresa a tu panel</h1>
+    </div>
+    <p class="leyenda">Usa la misma cuenta con la que entras a tu app de Nivo.</p>
+    <label class="campo">Correo o usuario<input type="text" name="usuario" autocomplete="username" autocapitalize="none" spellcheck="false" required></label>
+    <label class="campo">Contraseña<input type="password" name="clave" autocomplete="current-password" required></label>
+    <div id="i-error" class="aviso aviso-err" role="alert" hidden></div>
+    <button type="submit" class="btn btn-pri" id="i-entrar">Entrar</button>
+    <p class="leyenda" id="i-nota">Si entras con usuario (sin correo), abre el enlace que te dio tu negocio.</p>
+  </form>
+</div>
+
+<div id="app" class="panel" hidden>
+  <nav class="menu" aria-label="Menú del panel">
+    <a class="marca" id="m-marca" href="#/"><span class="ini" aria-hidden="true">N</span><b id="m-nombre">Reclamos</b></a>
+    <label class="sr" for="m-libro">Libro que estás viendo</label>
+    <select id="m-libro" hidden></select>
+    <a href="#/" data-vista="lista">Reclamos <span class="burbuja" id="m-pend" hidden></span></a>
+    <a href="#/configuracion" data-vista="configuracion">Configuración</a>
+    <a href="#/equipo" data-vista="equipo" id="m-equipo" hidden>Equipo</a>
+    <a href="#" id="m-publico" target="_blank" rel="noopener">Ver libro público</a>
+    <div class="cuenta"><span id="m-quien"></span><button type="button" class="item" id="m-salir">Salir</button></div>
+  </nav>
+  <main class="contenido" id="vista" tabindex="-1"></main>
+</div>
+
+<dialog id="dlg"><div class="dlg" id="dlg-cuerpo"></div></dialog>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="/reclamos/config.js"></script>
+<script src="/reclamos/comun.js"></script>
+<script src="/reclamos/panel.js"></script>
+</body>
+</html>

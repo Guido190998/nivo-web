@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Libro de Reclamaciones</title>
+<meta name="description" content="Registra un reclamo o una queja. Recibirás una copia en tu correo y una respuesta en un plazo máximo de 15 días hábiles.">
+<meta name="theme-color" content="#0F2747">
+<link rel="icon" href="/nivo-icono.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/reclamos/reclamos.css">
+</head>
+<body>
+<div class="pagina">
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header class="cab"><div class="caja">
+  <a class="marca" id="marca" href="/"><span class="ini" aria-hidden="true">N</span><b id="nombre-cab">Libro de Reclamaciones</b></a>
+  <a class="volver" id="volver" href="/" hidden>Volver al sitio</a>
+</div></header>
+
+<main id="contenido" class="lr-main" tabindex="-1"><div class="caja">
+  <p class="rotulo">Atención al consumidor</p>
+  <h1 class="titulo">Libro de Reclamaciones</h1>
+  <p class="bajada">Registra aquí tu reclamo o queja. Al enviarlo recibes al instante una copia en tu correo, y el proveedor te responde en un plazo máximo de 15 días hábiles.</p>
+
+  <div id="cargando" class="cargando" role="status"><span class="girando" aria-hidden="true"></span>Cargando…</div>
+  <div id="no-disponible" class="aviso aviso-av" role="alert" hidden></div>
+
+  <div class="dos" id="libro" hidden>
+    <section class="tarjeta" aria-labelledby="t-form">
+      <h2 id="t-form" class="sr">Hoja de reclamación</h2>
+      <ol class="pasos" id="pasos" aria-label="Pasos">
+        <li>1. Tus datos</li><li>2. Producto o servicio</li><li>3. Detalle</li><li>4. Revisar y enviar</li>
+      </ol>
+      <p class="nota-oblig">Todos los campos son obligatorios, salvo los que dicen «opcional».</p>
+
+      <form id="form" novalidate>
+        <input type="text" name="web" class="sr" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <fieldset class="paso" data-paso="1">
+          <legend class="sr">Tus datos</legend>
+          <h3>Tus datos</h3>
+          <label class="campo">Nombres y apellidos<input type="text" name="nombre" autocomplete="name" maxlength="160" required></label>
+          <div class="fila2">
+            <label class="campo">Tipo de documento
+              <select name="doc_tipo" required><option value="DNI">DNI</option><option value="CE">Carné de extranjería</option><option value="PASAPORTE">Pasaporte</option><option value="RUC">RUC</option><option value="OTRO">Otro</option></select>
+            </label>
+            <label class="campo">Número de documento<input type="text" name="doc_numero" inputmode="numeric" autocomplete="off" maxlength="20" required></label>
+          </div>
+          <label class="campo">Domicilio<input type="text" name="domicilio" autocomplete="street-address" maxlength="240" required></label>
+          <div class="fila2">
+            <label class="campo"><span>Celular <span class="op">(opcional)</span></span><input type="tel" name="telefono" autocomplete="tel" inputmode="tel" maxlength="20"></label>
+            <label class="campo">Correo electrónico<input type="email" name="correo" autocomplete="email" maxlength="160" required><span class="ayuda">Aquí te llega la copia y la respuesta.</span></label>
+          </div>
+          <label class="check"><input type="checkbox" name="menor"> Soy menor de edad</label>
+          <div class="recuadro" id="apoderado" hidden>
+            <p class="rec-p">Completa los datos de tu madre, padre o apoderado.</p>
+            <div class="fila2">
+              <label class="campo">Nombre del padre, madre o apoderado<input type="text" name="apoderado_nombre" maxlength="160"></label>
+              <label class="campo">Su número de documento<input type="text" name="apoderado_doc" inputmode="numeric" maxlength="20"></label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="paso" data-paso="2" hidden>
+          <legend class="sr">Producto o servicio</legend>
+          <h3>Producto o servicio</h3>
+          <div>
+            <p id="t-tipo" class="etq">¿Qué quieres registrar?</p>
+            <div class="opciones" role="group" aria-labelledby="t-tipo">
+              <button type="button" class="opcion" data-tipo="reclamo" aria-pressed="true"><b>Reclamo</b><span>No estás conforme con el producto o servicio que compraste o contrataste.</span></button>
+              <button type="button" class="opcion" data-tipo="queja" aria-pressed="false"><b>Queja</b><span>No estás conforme con la atención que recibiste u otro aspecto no relacionado con el producto o servicio.</span></button>
+            </div>
+          </div>
+          <div class="fila2">
+            <label class="campo">Tipo de bien<select name="bien"><option value="producto">Producto</option><option value="servicio">Servicio</option></select></label>
+            <label class="campo"><span>Monto reclamado <span class="op">(opcional)</span></span><input type="text" name="monto" inputmode="decimal" placeholder="S/ 0.00" maxlength="14" class="num"></label>
+          </div>
+          <label class="campo">Descripción del producto o servicio<input type="text" name="bien_descripcion" maxlength="300" required></label>
+          <div class="fila2">
+            <div class="campo">
+              <label for="pedido_ref">N.° de pedido o comprobante <span class="op">(opcional)</span></label>
+              <div class="con-boton"><input type="text" id="pedido_ref" name="pedido_ref" maxlength="60" autocomplete="off"><button type="button" class="btn btn-sec" id="buscar-pedido" hidden>Buscar</button></div>
+              <span class="ayuda" id="pedido-estado" role="status"></span>
+            </div>
+            <label class="campo"><span>Fecha de compra <span class="op">(opcional)</span></span><input type="date" name="fecha_compra"></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="paso" data-paso="3" hidden>
+          <legend class="sr">Detalle</legend>
+          <h3>Detalle</h3>
+          <label class="campo">¿Qué pasó?<textarea name="hechos" rows="6" maxlength="4000" required></textarea></label>
+          <label class="campo">¿Qué solución pides?<textarea name="pedido_consumidor" rows="3" maxlength="2000" required></textarea>
+            <span class="ayuda">Por ejemplo: devolución del dinero, cambio del producto, que se cumpla la entrega o que se corrija el servicio. Puedes pedir lo que consideres justo.</span></label>
+          <div class="archivos">
+            <span class="etq">Fotos o documentos <span class="op">(opcional)</span></span>
+            <input type="file" id="archivo" accept="image/jpeg,image/png,application/pdf" multiple class="sr" tabindex="-1">
+            <button type="button" class="zona" id="elegir-archivo">Adjuntar archivos · JPG, PNG o PDF de hasta 5 MB (máximo 3)</button>
+            <ul id="lista-archivos"></ul>
+          </div>
+        </fieldset>
+
+        <section class="paso" data-paso="4" hidden aria-labelledby="t-rev">
+          <h3 id="t-rev">Revisa y envía</h3>
+          <dl class="resumen" id="resumen"></dl>
+          <button type="button" class="btn-link" data-ir="1" data-inicio>Corregir datos</button>
+          <div class="recuadro">
+            <b>Tus datos solo se usan para atender esta hoja.</b> Los recibe <span id="prov-priv">el proveedor</span>, que debe responderte por escrito; se guardan como mínimo 2 años, como exige la normativa del Libro de Reclamaciones. No se usan para publicidad. <a id="link-priv" href="/privacidad">Política de privacidad</a>.
+          </div>
+          <label class="check"><input type="checkbox" name="acepto"> Confirmo que los datos son correctos y presento esta hoja de reclamación.</label>
+        </section>
+
+        <div id="error-form" class="aviso aviso-err" role="alert" hidden></div>
+
+        <div class="acciones">
+          <button type="button" class="btn btn-sec" id="atras" hidden>Atrás</button>
+          <span id="esp"></span>
+          <button type="submit" class="btn btn-pri" id="siguiente">Continuar</button>
+        </div>
+      </form>
+    </section>
+
+    <aside class="lado" aria-label="Información del proveedor">
+      <section aria-labelledby="t-prov">
+        <h2 id="t-prov">Proveedor</h2>
+        <dl>
+          <div><dt>Razón social</dt><dd id="p-razon"></dd></div>
+          <div><dt>Nombre comercial</dt><dd id="p-nombre"></dd></div>
+          <div><dt>RUC</dt><dd id="p-ruc" class="num"></dd></div>
+          <div><dt>Dirección</dt><dd id="p-dir"></dd></div>
+        </dl>
+      </section>
+      <section aria-labelledby="t-como">
+        <h2 id="t-como">Cómo se atiende</h2>
+        <ol>
+          <li>Envías tu hoja y recibes una copia en tu correo con su código.</li>
+          <li>El proveedor revisa tu caso y puede contactarte.</li>
+          <li>Te responde por escrito en un máximo de 15 días hábiles.</li>
+        </ol>
+      </section>
+      <p class="leyenda">La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es requisito previo para interponer una denuncia ante el Indecopi. El proveedor debe dar respuesta al reclamo o queja en un plazo no mayor a quince (15) días hábiles improrrogables.</p>
+    </aside>
+  </div>
+</div></main>
+
+<footer class="pie"><div class="caja">
+  <nav aria-label="Información legal" id="pie-legal"><a href="/privacidad">Privacidad</a><a href="/terminos">Términos</a><a href="/cookies">Cookies</a><a href="/aviso-legal">Aviso legal</a></nav>
+  <span>Libro de Reclamaciones virtual · Nivo</span>
+</div></footer>
+</div>
+<script src="/reclamos/config.js"></script>
+<script src="/reclamos/comun.js"></script>
+<script src="/reclamos/libro.js"></script>
+</body>
+</html>

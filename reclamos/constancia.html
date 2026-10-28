@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Constancia · Libro de Reclamaciones</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0F2747">
+<link rel="icon" href="/nivo-icono.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/reclamos/reclamos.css">
+</head>
+<body>
+<div class="pagina">
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<header class="cab"><div class="caja">
+  <span class="marca"><span class="ini" aria-hidden="true">N</span><b id="nombre-cab">Libro de Reclamaciones</b></span>
+</div></header>
+
+<main id="contenido" class="lr-main" tabindex="-1"><div class="caja">
+  <div id="cargando" class="cargando" role="status"><span class="girando" aria-hidden="true"></span>Cargando la constancia…</div>
+  <div id="error" class="aviso aviso-err" role="alert" hidden></div>
+
+  <article class="tarjeta" id="constancia" hidden>
+    <div class="hecho-cab" id="cab-nuevo" hidden>
+      <span class="icono"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F2747" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      <h1 id="t-hecho" tabindex="-1">Tu hoja quedó registrada</h1>
+    </div>
+    <div id="cab-ver" hidden><p class="rotulo">Libro de Reclamaciones</p><h1 class="titulo">Constancia de tu hoja</h1></div>
+
+    <div class="datos2">
+      <div class="dato"><span>Código</span><b class="num" id="c-codigo"></b></div>
+      <div class="dato"><span>Presentada</span><b class="num" id="c-fecha"></b></div>
+    </div>
+    <p id="c-plazo"></p>
+    <div id="c-correo" class="aviso" role="status"></div>
+
+    <div class="botones no-imprimir">
+      <button type="button" class="btn btn-pri" id="pdf">Descargar constancia (PDF)</button>
+      <button type="button" class="btn btn-sec" id="imprimir">Imprimir</button>
+      <a class="btn btn-sec" id="volver" href="/" hidden>Volver al sitio</a>
+    </div>
+
+    <h2 class="h2-sec">Datos presentados</h2>
+    <dl class="resumen" id="resumen"></dl>
+    <p class="leyenda leyenda-sep">La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es requisito previo para interponer una denuncia ante el Indecopi. El proveedor debe dar respuesta al reclamo o queja en un plazo no mayor a quince (15) días hábiles improrrogables.</p>
+  </article>
+</div></main>
+
+<footer class="pie"><div class="caja">
+  <nav aria-label="Información legal"><a href="/privacidad">Privacidad</a><a href="/terminos">Términos</a><a href="/cookies">Cookies</a><a href="/aviso-legal">Aviso legal</a></nav>
+  <span>Libro de Reclamaciones virtual · Nivo</span>
+</div></footer>
+</div>
+<script src="/reclamos/config.js"></script>
+<script src="/reclamos/comun.js"></script>
+<script src="/reclamos/constancia.js"></script>
+</body>
+</html>
