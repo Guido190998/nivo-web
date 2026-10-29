@@ -39,7 +39,7 @@ Módulo reutilizable para que Nivo y cada negocio que usa sus apps tengan su pro
 
 | Nombre | Dónde | Para qué |
 |---|---|---|
-| `GMAIL_USER` | Supabase › Edge Functions › Secrets | Correo desde el que se envían las copias (guido1998.14@gmail.com) |
+| `GMAIL_USER` | Supabase › Edge Functions › Secrets | Correo desde el que se envían las copias: soluciones.digitales.nivo@gmail.com |
 | `GMAIL_APP_PASSWORD` | Supabase › Edge Functions › Secrets | Contraseña de aplicación de esa cuenta de Google (no la contraseña normal) |
 | `SITIO_RECLAMOS` | Opcional, mismo lugar | Dirección de la web si cambia de dominio (por defecto `https://nivo-pe.vercel.app`) |
 | `SUPABASE_URL`, `SUPABASE_DB_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_ANON_KEY` | Las pone Supabase solo | Conexión de la función con la base |
