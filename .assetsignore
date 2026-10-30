@@ -1,0 +1,6 @@
+reclamos/sql
+reclamos/supabase
+reclamos/README.md
+vercel.json
+.vercelignore
+wrangler.jsonc

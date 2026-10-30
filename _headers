@@ -1,0 +1,27 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Cache-Control: no-cache
+
+/*.png
+  Cache-Control: public, max-age=604800
+
+/*.svg
+  Cache-Control: public, max-age=604800
+
+/libro/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://uvotorqggfqaadijpvte.supabase.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+
+/reclamos/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://uvotorqggfqaadijpvte.supabase.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  X-Robots-Tag: noindex, nofollow
+
+/libro/*/constancia
+  X-Robots-Tag: noindex, nofollow
+  ! Referrer-Policy
+  Referrer-Policy: no-referrer

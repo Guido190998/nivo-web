@@ -1,0 +1,2 @@
+/libro/:slug/constancia  /reclamos/constancia  200
+/libro/:slug             /reclamos/libro       200
