@@ -6,9 +6,9 @@ Módulo reutilizable para que Nivo y cada negocio que usa sus apps tengan su pro
 
 | Parte | Dónde vive | Dirección |
 |---|---|---|
-| Página pública (formulario) | `reclamos/libro.html` + `libro.js` | `https://nivo-pe.vercel.app/libro/<negocio>` |
-| Constancia | `reclamos/constancia.html` + `constancia.js` | `https://nivo-pe.vercel.app/libro/<negocio>/constancia?c=…&t=…` |
-| Panel del negocio | `reclamos/panel.html` + `panel.js` | `https://nivo-pe.vercel.app/reclamos/panel?libro=<negocio>` |
+| Página pública (formulario) | `reclamos/libro.html` + `libro.js` | `https://www.nivo-pe.workers.dev/libro/<negocio>` |
+| Constancia | `reclamos/constancia.html` + `constancia.js` | `https://www.nivo-pe.workers.dev/libro/<negocio>/constancia?c=…&t=…` |
+| Panel del negocio | `reclamos/panel.html` + `panel.js` | `https://www.nivo-pe.workers.dev/reclamos/panel?libro=<negocio>` |
 | Base de datos | `reclamos/sql/01_libro_reclamaciones.sql` | Supabase «Microapps», esquema privado `reclamos` |
 | Función del servidor | `reclamos/supabase/functions/reclamos/index.ts` | Supabase «Microapps», función `reclamos` |
 
@@ -41,7 +41,7 @@ Módulo reutilizable para que Nivo y cada negocio que usa sus apps tengan su pro
 |---|---|---|
 | `GMAIL_USER` | Supabase › Edge Functions › Secrets | Correo desde el que se envían las copias: soluciones.digitales.nivo@gmail.com |
 | `GMAIL_APP_PASSWORD` | Supabase › Edge Functions › Secrets | Contraseña de aplicación de esa cuenta de Google (no la contraseña normal) |
-| `SITIO_RECLAMOS` | Opcional, mismo lugar | Dirección de la web si cambia de dominio (por defecto `https://nivo-pe.vercel.app`) |
+| `SITIO_RECLAMOS` | Opcional, mismo lugar | Dirección de la web si cambia de dominio (por defecto `https://www.nivo-pe.workers.dev`) |
 | `SUPABASE_URL`, `SUPABASE_DB_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `SUPABASE_ANON_KEY` | Las pone Supabase solo | Conexión de la función con la base |
 | `reclamos/config.js` | Esta web | Dirección del proyecto y clave pública «anon» |
 

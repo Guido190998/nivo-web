@@ -10,9 +10,11 @@ const env = (k: string) => Deno.env.get(k) ?? "";
 const SUPABASE_URL = env("SUPABASE_URL");
 const SERVICE_KEY = env("SUPABASE_SERVICE_ROLE_KEY");
 const ANON_KEY = env("SUPABASE_ANON_KEY");
-const SITIO = env("SITIO_RECLAMOS") || "https://nivo-pe.vercel.app";
+const SITIO_BASE = "https://www.nivo-pe.workers.dev";
+// Si quedó guardada la dirección antigua de Vercel, se usa la nueva.
+const SITIO = /vercel\.app/.test(env("SITIO_RECLAMOS")) ? SITIO_BASE : (env("SITIO_RECLAMOS") || SITIO_BASE);
 const BUCKET = "reclamos-adjuntos";
-const ORIGENES = ["https://nivo-pe.vercel.app", "http://localhost:8820", "http://127.0.0.1:8820"];
+const ORIGENES = ["https://www.nivo-pe.workers.dev", "http://localhost:8820", "http://127.0.0.1:8820"];
 
 const sql = postgres(env("SUPABASE_DB_URL"), { max: 3, prepare: false, idle_timeout: 20 });
 
@@ -21,7 +23,7 @@ class Falla extends Error {
 }
 
 function cors(origen: string | null) {
-  const ok = origen && (ORIGENES.includes(origen) || /^https:\/\/nivo-pe(-[a-z0-9-]+)?\.vercel\.app$/.test(origen));
+  const ok = origen && (ORIGENES.includes(origen) || /^https:\/\/[a-z0-9-]+\.nivo-pe\.workers\.dev$/.test(origen) || /^https:\/\/nivo-pe(-[a-z0-9-]+)?\.vercel\.app$/.test(origen));
   return {
     "Access-Control-Allow-Origin": ok ? origen! : ORIGENES[0],
     "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",

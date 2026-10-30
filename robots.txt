@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /reclamos/
 
-Sitemap: https://nivo-pe.vercel.app/sitemap.xml
+Sitemap: https://www.nivo-pe.workers.dev/sitemap.xml

@@ -504,7 +504,7 @@ insert into reclamos.feriados (fecha, nombre) values
 -- Libro de Nivo como proveedor de las apps (datos del titular publicados en las páginas legales).
 insert into reclamos.libros (slug, nombre_comercial, razon_social, ruc, direccion, correo_responsable, responsable_nombre, telefono, sitio_url, privacidad_url)
 values ('nivo', 'Nivo', 'Guido Alonso Pacheco Villacorta', '10730237648', 'Calle Huancabamba Mz. I-4 Lt. 12, Santiago de Surco, Lima',
-        'soluciones.digitales.nivo@gmail.com', 'Guido Alonso Pacheco Villacorta', '965 604 732', 'https://nivo-pe.vercel.app', 'https://nivo-pe.vercel.app/privacidad');
+        'soluciones.digitales.nivo@gmail.com', 'Guido Alonso Pacheco Villacorta', '965 604 732', 'https://www.nivo-pe.workers.dev', 'https://www.nivo-pe.workers.dev/privacidad');
 
 -- Un libro por cada negocio existente; quedan sin publicar hasta que su dueño complete los datos.
 insert into reclamos.libros (slug, nombre_comercial, negocio_id)
