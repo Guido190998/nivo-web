@@ -10,7 +10,7 @@
   color-scheme:dark;
 }
 .app-ventas{--ac:#2E9AA3;--ac-s:#E3F3F2}.app-crm{--ac:#6F86D6;--ac-s:#EAEEFA}.app-mayoristas{--ac:#E3A43A;--ac-s:#FBF1DE}
-.app-puntos{--ac:#C86FA4;--ac-s:#F8E8F1}.app-ruta{--ac:#4FAF7C;--ac-s:#E4F4EA}.app-pedidos{--ac:#E07A5F;--ac-s:#FAE7E1}.app-erp{--ac:#3F6FB5;--ac-s:#E6EEF8}
+.app-puntos{--ac:#C86FA4;--ac-s:#F8E8F1}.app-ruta{--ac:#4FAF7C;--ac-s:#E4F4EA}.app-pedidos{--ac:#E07A5F;--ac-s:#FAE7E1}.app-erp{--ac:#5B8FD9;--ac-s:#E3ECF9}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:1ms!important}}
