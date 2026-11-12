@@ -221,3 +221,11 @@ dialog h2{margin:0;font-size:20px}
 .tabla table{min-width:820px}
 .contenido>.tarjeta{margin-top:32px}
 .tarjeta>.h2-sec:first-child{margin-top:0}
+
+/* Botón «Volver a la web»: lleva del panel a la web principal de Nivo. */
+.nivo-volver svg{width:16px;height:16px;flex:none}
+.menu a.nivo-volver{margin-top:auto;justify-content:flex-start}
+.menu a.nivo-volver span{display:inline-flex;align-items:center;gap:8px}
+.menu a.nivo-volver + .cuenta{margin-top:8px}
+.nivo-volver-auth{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;min-height:36px;padding:0 12px;border-radius:999px;border:1px solid rgba(147,167,184,.55);color:inherit;text-decoration:none;font-size:14px;font-weight:600}
+.nivo-volver-auth:hover{border-color:currentColor}
