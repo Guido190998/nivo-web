@@ -332,3 +332,7 @@ p{margin:0}
 .sv-pilar-precio small{font-size:13px;font-weight:500;color:var(--claro)}
 .sv-pilar-pie .btn{min-height:44px;font-size:15px;padding:0 20px}
 @media (max-width:860px){.sv-pilares{grid-template-columns:minmax(0,1fr)}}
+
+/* servicios · doble precio en pilar crear */
+.sv-precio-col{display:flex;flex-direction:column;gap:4px}
+.sv-precio-sub{font-size:13px;color:var(--claro);font-weight:600}
