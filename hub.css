@@ -343,3 +343,14 @@ p{margin:0}
 .sv-vermas svg{width:16px;height:16px;transition:transform var(--rapido) var(--sale)}
 .sv-vermas:hover svg{transform:translateX(3px)}
 .servicios + .servicios{border-top:1px solid var(--linea)}
+
+/* creacion · proceso de pago en 3 pasos */
+.sv-proceso{margin-top:var(--s7);border-radius:var(--r-lg);padding:var(--s6);background:linear-gradient(160deg,var(--azul),#123459);box-shadow:inset 0 0 0 1px var(--linea)}
+.sv-proceso h3{margin-top:6px;font-size:clamp(20px,2.2vw,28px);line-height:1.1}
+.sv-proceso > p{margin-top:8px;color:var(--claro);font-size:15px;max-width:52ch}
+.sv-pasos{list-style:none;margin:var(--s5) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5)}
+.sv-pasos li{display:flex;flex-direction:column;gap:10px}
+.sv-paso-n{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--teal);color:#06202A;font-weight:800;font-size:18px}
+.sv-pasos b{font-size:16px}
+.sv-pasos small{font-size:14px;color:var(--claro);line-height:1.5}
+@media (max-width:760px){.sv-pasos{grid-template-columns:minmax(0,1fr)}}
