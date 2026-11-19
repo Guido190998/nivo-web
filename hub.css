@@ -314,3 +314,21 @@ p{margin:0}
 @media (max-width:1100px){.sv-inc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:920px){.sv-grid{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:600px){.sv-inc-grid{grid-template-columns:minmax(0,1fr)}.sv-incluido{padding:var(--s5)}}
+
+/* servicios · dos pilares (crear / cuidar) */
+.sv-pilares{margin-top:var(--s7);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.sv-pilar{position:relative;display:flex;flex-direction:column;gap:14px;border-radius:var(--r-lg);padding:var(--s6);box-shadow:inset 0 0 0 1px var(--linea)}
+.sv-pilar.crear{background:linear-gradient(160deg,var(--azul),#123459)}
+.sv-pilar.cuidar{background:radial-gradient(420px 260px at 85% 0%,rgba(46,154,163,.32),transparent 70%),linear-gradient(160deg,#124a52,#0C2A40)}
+.sv-pilar-ic{width:52px;height:52px;flex:none;border-radius:14px;display:grid;place-items:center;background:rgba(191,217,210,.12);color:var(--teal-2)}
+.sv-pilar-ic svg{width:28px;height:28px}
+.sv-pilar h3{font-size:clamp(22px,2.4vw,28px);line-height:1.1}
+.sv-pilar > p{color:var(--claro);font-size:15px;max-width:42ch}
+.sv-pilar ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.sv-pilar ul li{position:relative;padding-left:28px;font-size:14.5px;line-height:1.4}
+.sv-pilar ul svg{position:absolute;left:0;top:0;width:19px;height:19px;padding:3px;border-radius:50%;background:var(--teal);color:#06202A}
+.sv-pilar-pie{margin-top:auto;padding-top:18px;border-top:1px solid var(--linea);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+.sv-pilar-precio{font-size:17px;font-weight:800}
+.sv-pilar-precio small{font-size:13px;font-weight:500;color:var(--claro)}
+.sv-pilar-pie .btn{min-height:44px;font-size:15px;padding:0 20px}
+@media (max-width:860px){.sv-pilares{grid-template-columns:minmax(0,1fr)}}
