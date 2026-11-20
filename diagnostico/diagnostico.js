@@ -12,7 +12,7 @@
   const recommendations = {
     ventas: { name: "Nivo Ventas", desc: "Para ordenar el registro de ventas y el control operativo de tu negocio.", detail: "Podemos revisar cómo llevas tus ventas e inventario y qué parte conviene centralizar.", tags: ["Ventas", "Inventario"] },
     pedidos: { name: "Nivo Pedidos", desc: "Para recibir pedidos digitales de forma más ordenada y facilitar la atención de tus clientes.", detail: "Una experiencia de pedidos propia puede reducir el intercambio manual de mensajes y errores al tomar pedidos.", tags: ["Pedidos online", "Atención"] },
-    agenda: { name: "Nivo CRM + Agenda", desc: "Para organizar clientes, citas y el seguimiento de tus atenciones.", detail: "Centraliza la información de tus clientes y organiza mejor las citas y el seguimiento.", tags: ["Clientes", "Citas"] },
+    agenda: { name: "Nivo CRM", desc: "Para organizar la información de tus clientes y dar seguimiento a tus oportunidades.", detail: "Podemos revisar cómo centralizar tus contactos y mejorar el seguimiento comercial. Si necesitas agenda de citas, evaluaremos ese alcance por separado.", tags: ["Clientes", "Seguimiento"] },
     puntos: { name: "Nivo Puntos", desc: "Para incentivar que tus clientes regresen mediante un programa de fidelización.", detail: "Puedes implementar una experiencia de puntos y beneficios para fortalecer la recurrencia.", tags: ["Fidelización", "Clientes"] },
     mayoristas: { name: "Nivo Mayoristas", desc: "Para ordenar pedidos y la atención de tus clientes mayoristas.", detail: "Una plataforma orientada a tus clientes B2B puede simplificar la toma y gestión de pedidos.", tags: ["B2B", "Pedidos"] },
     ruta: { name: "Nivo Ruta", desc: "Para organizar las visitas y actividades de tu equipo en campo.", detail: "Podemos ayudarte a tener mayor orden y seguimiento de las actividades fuera de oficina.", tags: ["Equipo de campo", "Seguimiento"] },
@@ -48,6 +48,7 @@
     const kicker = document.createElement("div"); kicker.className = "question-kicker"; kicker.textContent = "Conozcamos tu negocio";
     const title = document.createElement("h2"); title.className = "question-title"; title.id = "question-title"; title.textContent = q.title;
     const help = document.createElement("p"); help.className = "question-help"; help.textContent = q.help;
+    const validation = document.createElement("p"); validation.className = "form-status error"; validation.id = "question-error"; validation.hidden = true; validation.textContent = "Selecciona una respuesta para continuar.";
     const options = document.createElement("div"); options.className = "options";
     q.options.forEach((option, index) => {
       const label = document.createElement("label"); label.className = "option" + (selected.includes(option) ? " selected" : "");
@@ -67,7 +68,7 @@
       });
       options.appendChild(label);
     });
-    questionArea.append(kicker, title, help, options);
+    questionArea.append(kicker, title, help, options, validation);
   }
 
   function calculateRecommendation() {
@@ -116,9 +117,8 @@
   nextBtn.addEventListener("click", () => {
     const q = questions[step];
     if (!selectedValues(q).length) {
-      const title = $("question-title");
-      title?.focus?.();
-      title?.setAttribute("aria-label", q.title + ". Selecciona una respuesta para continuar.");
+      const validation = $("question-error");
+      if (validation) validation.hidden = false;
       return;
     }
     if (step < questions.length - 1) { step++; renderQuestion(); }
