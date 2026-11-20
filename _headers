@@ -25,3 +25,7 @@
   X-Robots-Tag: noindex, nofollow
   ! Referrer-Policy
   Referrer-Policy: no-referrer
+
+/diagnostico/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://uvotorqggfqaadijpvte.supabase.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
