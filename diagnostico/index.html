@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0F2747">
+  <title>Diagnóstico digital para tu negocio · Nivo</title>
+  <meta name="description" content="Descubre qué solución digital de Nivo puede ayudarte a ordenar y hacer crecer tu negocio.">
+  <link rel="icon" href="/nivo-icono.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/diagnostico/diagnostico.css">
+  <script src="/diagnostico/diagnostico.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Nivo, página principal">
+      <img src="/nivo-icono.svg" alt="" width="34" height="34">
+      <span>NIVO</span>
+    </a>
+    <a class="back" href="/">Volver a Nivo</a>
+  </header>
+
+  <main class="shell">
+    <section class="intro">
+      <span class="eyebrow">DIAGNÓSTICO DIGITAL GRATUITO</span>
+      <h1>Tu negocio tiene mucho por crecer.<br><em>Hagámoslo más simple.</em></h1>
+      <p>Responde unas preguntas y descubre qué solución digital de Nivo puede ayudarte a dar el siguiente paso.</p>
+      <div class="trust"><span>✦</span> 2 minutos · Sin compromiso · Recomendación personalizada</div>
+    </section>
+
+    <section class="quiz-card" aria-labelledby="question-title">
+      <div class="progress-head">
+        <span id="step-label">PREGUNTA 1 DE 5</span>
+        <span id="progress-percent">20%</span>
+      </div>
+      <div class="progress-track"><div id="progress-bar"></div></div>
+
+      <form id="diagnostic-form" novalidate>
+        <div id="question-area" aria-live="polite"></div>
+        <div class="actions">
+          <button type="button" class="btn btn-quiet" id="back-btn" hidden>Volver</button>
+          <button type="button" class="btn btn-primary" id="next-btn">Continuar <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="privacy-note">Tus respuestas se utilizarán únicamente para preparar una recomendación y contactarte si lo autorizas.</p>
+      </form>
+
+      <section id="result-area" hidden aria-live="polite"></section>
+      <section id="lead-area" hidden>
+        <div class="lead-heading">
+          <span class="eyebrow">UN ÚLTIMO PASO</span>
+          <h2>Recibe orientación para tu negocio</h2>
+          <p>Déjanos tus datos y podremos conversar sobre la solución recomendada.</p>
+        </div>
+        <form id="lead-form">
+          <label>Tu nombre<input name="nombre" autocomplete="name" required minlength="2" maxlength="80" placeholder="¿Cómo te llamas?"></label>
+          <label>Nombre de tu negocio<input name="negocio" autocomplete="organization" required minlength="2" maxlength="100" placeholder="Nombre del negocio"></label>
+          <label>WhatsApp<input name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required minlength="7" maxlength="20" placeholder="Ej. 999 999 999"></label>
+          <label>Correo electrónico <span>(opcional)</span><input name="email" type="email" autocomplete="email" maxlength="120" placeholder="tunombre@correo.com"></label>
+          <label class="consent"><input name="consentimiento" type="checkbox" required><span>Acepto que Nivo use estos datos para contactarme sobre esta recomendación. He leído el <a href="/privacidad" target="_blank" rel="noopener">aviso de privacidad</a>.</span></label>
+          <label class="hp" aria-hidden="true">No completar<input name="website" tabindex="-1" autocomplete="off"></label>
+          <button class="btn btn-primary submit" type="submit">Enviar mis respuestas <span aria-hidden="true">→</span></button>
+          <p id="form-status" class="form-status" role="status"></p>
+        </form>
+      </section>
+    </section>
+    <footer>© Nivo · Tu negocio, más simple.</footer>
+  </main>
+</body>
+</html>
