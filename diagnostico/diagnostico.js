@@ -154,8 +154,7 @@
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "apikey": config.publishableKey,
-          "Authorization": "Bearer " + config.publishableKey
+          "apikey": config.publishableKey
         },
         body: JSON.stringify({p_datos: payload})
       });
