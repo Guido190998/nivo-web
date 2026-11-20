@@ -148,10 +148,16 @@
     const submit = leadForm.querySelector("button[type=submit]");
     submit.disabled = true;
     try {
-      const response = await fetch("https://uvotorqggfqaadijpvte.supabase.co/functions/v1/nivo-diagnostico", {
+      const config = window.NIVO_DIAG_CONFIG;
+      if (!config?.supabaseUrl || !config?.publishableKey) throw new Error("Falta configurar el servicio.");
+      const response = await fetch(config.supabaseUrl + "/rest/v1/rpc/registrar_prospecto_nivo", {
         method: "POST",
-        headers: {"Content-Type":"application/json"},
-        body: JSON.stringify(payload)
+        headers: {
+          "Content-Type": "application/json",
+          "apikey": config.publishableKey,
+          "Authorization": "Bearer " + config.publishableKey
+        },
+        body: JSON.stringify({p_datos: payload})
       });
       if (!response.ok) throw new Error("No se pudo registrar el diagnóstico.");
       status.className = "form-status success";
